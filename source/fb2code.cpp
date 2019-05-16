@@ -1,5 +1,6 @@
 #include "fb2code.hpp"
 
+#include <QApplication>
 #include <QXmlSchema>
 #include <QAbstractMessageHandler>
 #include <QXmlSchemaValidator>
@@ -238,7 +239,7 @@ void FbHighlighter::highlightBlock(const QString& text)
 
     for (; i < text.length(); i++)
     {
-        switch (text.at(i).toAscii())
+        switch (text.at(i).toLatin1())
         {
         case '<':
             brackets++;
